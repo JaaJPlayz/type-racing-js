@@ -1,6 +1,8 @@
 const player = document.querySelector("#player");
 const cpu = document.querySelector("#cpu");
 const start = document.querySelector("#start"); // Start button
+const reset = document.querySelector("#reset"); // Reset button
+
 const road = document.querySelector("#cpu_road");
 let gameStarted = false;
 let gameEnded = false;
@@ -38,10 +40,21 @@ function checkCpuWin() {
   }
 }
 
+function resetGame() {
+  player.style.marginLeft = "20px";
+  cpu.style.marginLeft = "20px";
+  gameStarted = false;
+  gameEnded = false;
+}
+
 start.addEventListener("click", function () {
   if (!gameStarted) {
     gameStarted = true;
   }
+});
+
+reset.addEventListener("click", function () {
+  resetGame();
 });
 
 window.addEventListener("keydown", function (event) {
