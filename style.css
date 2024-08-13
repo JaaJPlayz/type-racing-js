@@ -72,10 +72,11 @@ body {
 }
 
 #player_road {
+  margin: 50px;
   background-image: url("public/img/road.png");
   background-repeat: repeat-x;
   background-size: contain;
-  width: 100vw;
+  width: calc(100% - 100px);
   height: 10vh;
 }
 
@@ -84,4 +85,5 @@ body {
   background-size: cover;
   width: 100px;
   height: 100px;
+  margin-left: 20px;
 }
