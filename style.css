@@ -24,6 +24,15 @@ body {
   height: 100vh;
 }
 
+#game_container {
+  border: 3px solid blue;
+  width: 90vw;
+  height: 80vh;
+  background-image: url("public/img/grass_game_background.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
 #about {
   display: flex;
   align-items: center;
@@ -60,4 +69,19 @@ body {
 
 .site_navigation a:hover {
   color: lime;
+}
+
+#player_road {
+  background-image: url("public/img/road.png");
+  background-repeat: repeat-x;
+  background-size: contain;
+  width: 100vw;
+  height: 10vh;
+}
+
+#player {
+  background-image: url("public/img/player.svg");
+  background-size: cover;
+  width: 100px;
+  height: 100px;
 }
