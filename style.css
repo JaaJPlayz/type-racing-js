@@ -1,27 +1,63 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: black;
   color: white;
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
-  height: 100vh;
+  height: auto;
   width: 100vw;
-  overflow: hidden;
+}
 
+#game {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+#about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+#contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
 }
 
 .navbar {
   position: absolute;
   top: 0;
   left: 0;
-  width: 97.5vw;
+  width: 97.9vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  border: 3px solid red;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin: 0 20px;
+}
+
+.site_navigation a:hover {
+  color: lime;
 }
