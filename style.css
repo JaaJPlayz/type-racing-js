@@ -28,7 +28,7 @@ body {
   border: 3px solid blue;
   width: 90vw;
   height: 80vh;
-  background-image: url("public/img/grass_game_background.jpg");
+  background-image: url("public/img/grass.jpg");
   background-size: cover;
   background-position: center;
 }
