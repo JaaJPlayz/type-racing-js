@@ -13,8 +13,12 @@ function getQuote() {
   fetch("quotes.json")
     .then((response) => response.json())
     .then((data) => {
-      console.log(data['blyad'][Math.floor(Math.random() * data['blyad'].length)]);
-      quotes.innerHTML = data['blyad'][Math.floor(Math.random() * data['blyad'].length)]['quotes'];
+      const selectedQuote =
+        data["randomQuotes"][
+          Math.floor(Math.random() * data["randomQuotes"].length)
+        ]["quotes"];
+      quotes.innerHTML = `<p>${selectedQuote}</p>`;
+      quote = selectedQuote;
     });
 }
 
