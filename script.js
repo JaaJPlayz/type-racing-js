@@ -2,10 +2,23 @@ const player = document.querySelector("#player");
 const cpu = document.querySelector("#cpu");
 const start = document.querySelector("#start"); // Start button
 const reset = document.querySelector("#reset"); // Reset button
-
 const road = document.querySelector("#cpu_road");
+const quotes = document.querySelector("#quote_container");
+
 let gameStarted = false;
 let gameEnded = false;
+let quote = "";
+
+async function getQuote(filepath) {
+  let quoteIndex = getRandomIntInclusive(0, 999);
+
+  const response = await fetch(filepath);
+  const data = await response.json();
+  quote = data[quoteIndex];
+
+  quotes.innerHTML = quote; // this sets to [object Object] fix dis
+}
+
 
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
@@ -45,6 +58,8 @@ function resetGame() {
   cpu.style.marginLeft = "20px";
   gameStarted = false;
   gameEnded = false;
+
+  getQuote("quotes.json");
 }
 
 start.addEventListener("click", function () {
