@@ -9,16 +9,14 @@ let gameStarted = false;
 let gameEnded = false;
 let quote = "";
 
-async function getQuote(filepath) {
-  let quoteIndex = getRandomIntInclusive(0, 999);
-
-  const response = await fetch(filepath);
-  const data = await response.json();
-  quote = data[quoteIndex];
-
-  quotes.innerHTML = quote; // this sets to [object Object] fix dis
+function getQuote() {
+  fetch("quotes.json")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data['blyad'][Math.floor(Math.random() * data['blyad'].length)]);
+      quotes.innerHTML = data['blyad'][Math.floor(Math.random() * data['blyad'].length)]['quotes'];
+    });
 }
-
 
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
@@ -66,6 +64,8 @@ start.addEventListener("click", function () {
   if (!gameStarted) {
     gameStarted = true;
   }
+
+  getQuote("quotes.json");
 });
 
 reset.addEventListener("click", function () {
