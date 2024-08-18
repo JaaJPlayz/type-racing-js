@@ -15,7 +15,7 @@ function getQuote() {
     .then((data) => {
       const selectedQuote =
         data["randomQuotes"][
-          Math.floor(Math.random() * data["randomQuotes"].length)
+        Math.floor(Math.random() * data["randomQuotes"].length)
         ]["quotes"];
       quotes.innerHTML = `<p>${selectedQuote}</p>`;
       quote = selectedQuote;
@@ -64,19 +64,22 @@ function resetGame() {
   getQuote("quotes.json");
 }
 
-start.addEventListener("click", function () {
+start.addEventListener("click", function() {
   if (!gameStarted) {
     gameStarted = true;
   }
 
+  start.blur();
+
   getQuote("quotes.json");
 });
 
-reset.addEventListener("click", function () {
+reset.addEventListener("click", function() {
   resetGame();
+  reset.blur();
 });
 
-window.addEventListener("keydown", function (event) {
+window.addEventListener("keydown", function(event) {
   if (!gameStarted | gameEnded) {
     return;
   }
@@ -85,12 +88,12 @@ window.addEventListener("keydown", function (event) {
     return;
   }
 
-  if (event.key === "j") {
-    playerMove();
+  if (event.key === " ") {
+    event.preventDefault();
   }
 });
 
-setInterval(function () {
+setInterval(function() {
   if (!gameStarted | gameEnded) {
     return;
   }
